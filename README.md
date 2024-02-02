@@ -173,43 +173,73 @@ If you have not run EVE-O Preview before, or since this feature was added then i
 
 **Note**: Don't forget to make a backup copy of the file before editing it.
 
-Open the file using any text editor. find the entries **CycleGroup1ForwardHotkeys** and **CycleGroup1BackwardHotkeys**. Most probably it will look like
+Open the file using any text editor. find the entries **CycleClientGroups**. Most probably it will look like
 
-    "CycleGroup1ForwardHotkeys": [
-      "F14",
-      "Control+F14"
-    ],
-    "CycleGroup1BackwardHotkeys": [
-      "F13",
-      "Control+F13"
+    "CycleClientGroups": [
+        {
+            "CycleGroupName": "My DPS Group",
+            "CycleGroupForwardHotkeys": [
+            "F14",
+            "Control+F14"
+            ],
+            "CycleGroupBackwardHotkeys": [
+            "F13",
+            "Control+F13"
+            ],
+            "CycleGroupClientsOrder": {
+            "EVE - Example DPS Toon 1": 1,
+            "EVE - Example DPS Toon 2": 2,
+            "EVE - Example DPS Toon 3": 3
+            }
+        }
     ]
-
-**Note**: It is highly recommended to leave the Hotkey values as default and bind them with a gaming device if you can support it.
-
-Next find the entry **CycleGroup1ForwardHotkeys**. Most probably it will look like
-
-    "CycleGroup1ClientsOrder": {
-      "EVE - Example DPS Toon 1": 1,
-      "EVE - Example DPS Toon 2": 2,
-      "EVE - Example DPS Toon 3": 3
-    }
 
 You should modify this entry with a list of each of your clients replacing "Example DPS Toon 1", etc with the name of your character. The numbers on the right are used to force the order in which they cycle.
 If a character appears in the list but is not currently logged in, then it will simply be skipped.
 If a character does not appear in the list, then they will never become active when cycling clients.
 
-By now you may have noticed that there are two groups. The above configuration can be followed for a second group by using the values **CycleGroup2ForwardHotkeys**, **CycleGroup2BackwardHotkeys**, and **CycleGroup2ForwardHotkeys**
+The above configuration can be followed for a second group by making a second group in the **CycleClientGroups**
 This may provide useful if you want to have one HotKey to cycle through a group of DPS characters, while another HotKey cycles through support roles such as gate scouts, or a group of logi.
+    
+    "CycleClientGroups": [
+        {
+            "CycleGroupName": "My DPS Group",
+            "CycleGroupForwardHotkeys": [
+            "F14",
+            "Control+F14"
+            ],
+            "CycleGroupBackwardHotkeys": [
+            "F13",
+            "Control+F13"
+            ],
+            "CycleGroupClientsOrder": {
+            "EVE - Example DPS Toon 1": 1,
+            "EVE - Example DPS Toon 2": 2,
+            "EVE - Example DPS Toon 3": 3
+            }
+        },
+        {
+            "CycleGroupName": "My LOGI Group",
+            "CycleGroupForwardHotkeys": [
+            "F16",
+            "Control+F16"
+            ],
+            "CycleGroupBackwardHotkeys": [
+            "F17",
+            "Control+F17"
+            ],
+            "CycleGroupClientsOrder": {
+            "EVE - Example LOGI Toon 1": 1,
+            "EVE - Example LOGI Toon 2": 2,
+            "EVE - Example LOGI Toon 3": 3
+            }
+        }
+    ]
 
 Alternatively you may not want to use any of these HotKeys. Please note that deleting the values in their entirety will simply result in them being automatically re-generated.
 Should you wish to remove these HotKeys completely, Simply set the values to empty, such as the example below:
 
-      "CycleGroup1ForwardHotkeys": [],
-	  "CycleGroup1BackwardHotkeys": [],
-	  "CycleGroup1ClientsOrder": {},
-	  "CycleGroup2ForwardHotkeys": [],
-	  "CycleGroup2BackwardHotkeys": [],
-	  "CycleGroup2ClientsOrder": {}
+    "CycleClientGroups": {}
 
 **Hints** 
 * Minimise the use of modifiers or standard keys to minimise issues with the client playing up. In the default example unusual Function keys (e.g. F14) are used which are then bound to a game pad or gaming mouse.
