@@ -8,6 +8,7 @@
     <!-- Make sure start same folder .NET Core CLI and Visual Studio -->
     <RunWorkingDirectory>$(MSBuildProjectDirectory)</RunWorkingDirectory>
     <Configurations>Debug;Release;Build</Configurations>
+    <Version>6.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,6 +28,7 @@
   <ItemGroup>
     <PackageReference Include="Cake.Frosting" Version="1.0.0-rc0002" />
     <PackageReference Include="Cake.MarkdownToPdf" Version="2.5.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

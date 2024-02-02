@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using EveOPreview.Configuration.Implementation;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -6,13 +7,7 @@ namespace EveOPreview.Configuration
 {
 	public interface IThumbnailConfiguration
 	{
-		List<string> CycleGroup1ForwardHotkeys { get; set; }
-		List<string> CycleGroup1BackwardHotkeys { get; set; }
-		Dictionary<string, int> CycleGroup1ClientsOrder { get; set; }
-
-		List<string> CycleGroup2ForwardHotkeys { get; set; }
-		List<string> CycleGroup2BackwardHotkeys { get; set; }
-		Dictionary<string, int> CycleGroup2ClientsOrder { get; set; }
+		List<CycleClientGroups> CycleClientGroups { get; set; }
 
 		Dictionary<string, Color> PerClientActiveClientHighlightColor { get; set; }
 
